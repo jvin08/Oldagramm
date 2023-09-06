@@ -1,0 +1,51 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="index.css">
+        <title>Oldagram</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Source+Sans+3&display=swap" rel="stylesheet">
+    </head>
+    <body>
+
+        <div class="container">
+            <header>
+                <img src="images/logo.png" alt="site logo" class="logo">
+                <img src="images/user-avatar.png" alt="user avatar" class="user-avatar">
+            </header>
+        </div>
+
+        <div  class="container" id="post-container">
+            <section class="user-info">
+                <img 
+                    src="images/avatar-vangogh.jpg" 
+                    alt="vangogh avatar" 
+                    class="posts-user-avatar"
+                    id="post-user-avatar"><!---->
+                <div class="user-data">
+                    <p class="name" id="name">Vincent Van Gogh</p><!---->
+                    <p class="user-location" id="location">Zudert, Netherlands</p><!---->
+                </div>
+            </section>
+
+            <!-- user's posted photo -->
+            <section class="post" id="post">
+                <img  src="images/post-vangogh.jpg" alt="post photo" id="post-photo"><!---->
+            </section>
+
+            <!-- reactions -->
+            <section class="icons">
+                <img src="images/icon-heart.jpg" alt="heart icon">
+                <img src="images/icon-comment.jpg" alt="comment icon">
+                <img src="images/icon-vector.jpg" alt="vector icon">
+            </section>
+
+            <footer>
+                <p class="likes"><span id="quantity">12,502</span> likes</p><!---->
+                <p class="message"><span id="username">vincey1853 </span> <span id="comment"> a few mushrooms lol</span></p><!---->
+            </footer>
+            <div id="gap"></div>
+        </div>
+        <script src="index.js"></script>
+    </body>
+</html>
