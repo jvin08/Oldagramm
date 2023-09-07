@@ -59,6 +59,7 @@ img.user-avatar{
 .post{
     background-color: white;
     background-size: auto 100%;
+    cursor: pointer;
 }
 
 
@@ -100,4 +101,3 @@ footer{
     height: 25px;
     background-color: #dee2e6;
 }
-

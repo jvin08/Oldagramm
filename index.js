@@ -33,22 +33,47 @@ const realNameEl = document.getElementById("name")
 const userNameEl = document.getElementById("username")
 const userLocationEl = document.getElementById("location")
 const avatarEl = document.getElementById("post-user-avatar")
-const postEl = document.getElementById("post-photo")
+const postEl = document.getElementById("post")
 const commentEl =document.getElementById("comment")
 const likesEl = document.getElementById("quantity")
+const heartEl = document.getElementById("")
 let postsItems = ""
+let newPosts = [...posts]
 
-for (let i = 0; i < posts.length; i++) {
-    realNameEl.innerHTML = posts[i].name
-    userNameEl.innerHTML = posts[i].username
-    userLocationEl.innerHTML = posts[i].location
-    avatarEl.src = posts[i].avatar
-    postEl.src = posts[i].post
-    commentEl.innerHTML = posts[i].comment
-    likesEl.innerHTML = posts[i].likes
-    postsItems += postContainerEl.innerHTML;
+// adding likes to the post    
+function addLikes(post){
+    newPosts[post].likes += 1
+    let newLikesEl = document.getElementById(`likes-id-${post}`)
+    newLikesEl.textContent = newPosts[post].likes
+    // console.log( newLikesEl.textContent);
+    render(newPosts)
+    }
+
+
+
+//rendering all posts from the array 
+const render = function(data){
+for (let i = 0; i < data.length; i++) {
+    realNameEl.innerHTML = data[i].name
+    userNameEl.innerHTML = data[i].username
+    userLocationEl.innerHTML = data[i].location
+    avatarEl.src = data[i].avatar
+    // create image element and removing old
+    postEl.innerHTML = `<img  src=${data[i].post} 
+                                      alt="post photo" 
+                                      id="post-photo" 
+                                      ondblclick="addLikes(${i})">`
+    commentEl.innerHTML = data[i].comment
+    likesEl.textContent = data[i].likes
+    likesEl.id = `likes-id-${i}`
+    // console.log("new likes: " + likesEl.innerHTML)
+    postsItems += postContainerEl.innerHTML
+    }
+    // console.log("rendering new posts");
+    
 }
+render(newPosts);
 postContainerEl.innerHTML = postsItems
-console.log(postsItems);
+// console.log(postsItems)
 
 
