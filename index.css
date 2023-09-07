@@ -59,9 +59,13 @@ img.user-avatar{
 .post{
     background-color: white;
     background-size: auto 100%;
+}
+#heart,
+#comment-icon,
+#vector-icon,
+.post{
     cursor: pointer;
 }
-
 
 .icons{
     background-color: white;
