@@ -42,7 +42,9 @@ let newPosts = [...posts]
 
 // adding likes to the post    
 function addLikes(post){
+    // console.log('adding likes');
     newPosts[post].likes += 1
+    // console.log('likes ' + newPosts[post].likes);
     let newLikesEl = document.getElementById(`likes-id-${post}`)
     newLikesEl.textContent = newPosts[post].likes
     // console.log( newLikesEl.textContent);
@@ -69,7 +71,7 @@ for (let i = 0; i < data.length; i++) {
     // console.log("new likes: " + likesEl.innerHTML)
     postsItems += postContainerEl.innerHTML
     }
-    // console.log("rendering new posts");
+    // console.log(postsItems);
     
 }
 render(newPosts);
